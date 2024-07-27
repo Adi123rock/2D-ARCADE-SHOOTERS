@@ -1455,6 +1455,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2041920256}
     - target: {fileID: 8891871114822124031, guid: 499049fb6958c7f43bc0f08bf163dd7e, type: 3}
+      propertyPath: pfabshield
+      value: 
+      objectReference: {fileID: 1134144198}
+    - target: {fileID: 8891871114822124031, guid: 499049fb6958c7f43bc0f08bf163dd7e, type: 3}
+      propertyPath: ShieldPowerup
+      value: 
+      objectReference: {fileID: 1699912764}
+    - target: {fileID: 8891871114822124031, guid: 499049fb6958c7f43bc0f08bf163dd7e, type: 3}
       propertyPath: explosionEffect
       value: 
       objectReference: {fileID: 326271034}
@@ -1911,6 +1919,14 @@ PrefabInstance:
       propertyPath: healthtext
       value: 
       objectReference: {fileID: 2041920256}
+    - target: {fileID: 8891871114822124031, guid: 499049fb6958c7f43bc0f08bf163dd7e, type: 3}
+      propertyPath: pfabshield
+      value: 
+      objectReference: {fileID: 1134144198}
+    - target: {fileID: 8891871114822124031, guid: 499049fb6958c7f43bc0f08bf163dd7e, type: 3}
+      propertyPath: ShieldPowerup
+      value: 
+      objectReference: {fileID: 1699912764}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3906,7 +3922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2711056437055929551, guid: 499049fb6958c7f43bc0f08bf163dd7e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8654950268848768037, guid: 499049fb6958c7f43bc0f08bf163dd7e, type: 3}
       propertyPath: bullt
@@ -3924,6 +3940,14 @@ PrefabInstance:
       propertyPath: healthtext
       value: 
       objectReference: {fileID: 2041920256}
+    - target: {fileID: 8891871114822124031, guid: 499049fb6958c7f43bc0f08bf163dd7e, type: 3}
+      propertyPath: pfabshield
+      value: 
+      objectReference: {fileID: 1134144198}
+    - target: {fileID: 8891871114822124031, guid: 499049fb6958c7f43bc0f08bf163dd7e, type: 3}
+      propertyPath: ShieldPowerup
+      value: 
+      objectReference: {fileID: 1699912764}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6747,6 +6771,14 @@ PrefabInstance:
       propertyPath: healthtext
       value: 
       objectReference: {fileID: 2041920256}
+    - target: {fileID: 8891871114822124031, guid: 499049fb6958c7f43bc0f08bf163dd7e, type: 3}
+      propertyPath: pfabshield
+      value: 
+      objectReference: {fileID: 1134144198}
+    - target: {fileID: 8891871114822124031, guid: 499049fb6958c7f43bc0f08bf163dd7e, type: 3}
+      propertyPath: ShieldPowerup
+      value: 
+      objectReference: {fileID: 1699912764}
     - target: {fileID: 8891871114822124031, guid: 499049fb6958c7f43bc0f08bf163dd7e, type: 3}
       propertyPath: explosionEffect
       value: 
@@ -10483,6 +10515,14 @@ PrefabInstance:
       propertyPath: healthtext
       value: 
       objectReference: {fileID: 2041920256}
+    - target: {fileID: 8891871114822124031, guid: 499049fb6958c7f43bc0f08bf163dd7e, type: 3}
+      propertyPath: pfabshield
+      value: 
+      objectReference: {fileID: 1134144198}
+    - target: {fileID: 8891871114822124031, guid: 499049fb6958c7f43bc0f08bf163dd7e, type: 3}
+      propertyPath: ShieldPowerup
+      value: 
+      objectReference: {fileID: 1699912764}
     - target: {fileID: 8891871114822124031, guid: 499049fb6958c7f43bc0f08bf163dd7e, type: 3}
       propertyPath: explosionEffect
       value: 
