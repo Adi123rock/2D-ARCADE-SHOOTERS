@@ -55,7 +55,7 @@ public class PlayerCollisiion : MonoBehaviour
                 Invoke("GameOver",delay*1f);  
             }
         }
-        else
+        else if(Collisioninfo.tag=="EnemyBullet")
         {
             FindObjectOfType<AudioManager>().SfxPlay("ShieldCollision");
         }

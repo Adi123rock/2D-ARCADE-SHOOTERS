@@ -371,7 +371,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2066193694}
         m_TargetAssemblyTypeName: GameMAnager, Assembly-CSharp
         m_MethodName: BacktoHome
         m_Mode: 1
@@ -7209,7 +7209,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2066193694}
         m_TargetAssemblyTypeName: GameMAnager, Assembly-CSharp
         m_MethodName: Lost2
         m_Mode: 1
@@ -7409,7 +7409,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2066193694}
         m_TargetAssemblyTypeName: GameMAnager, Assembly-CSharp
         m_MethodName: Continue
         m_Mode: 1
@@ -9372,7 +9372,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2066193695}
         m_TargetAssemblyTypeName: Startgame, Assembly-CSharp
         m_MethodName: startgm
         m_Mode: 1
@@ -10324,7 +10324,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2066193695}
         m_TargetAssemblyTypeName: Startgame, Assembly-CSharp
         m_MethodName: lvlsltclose
         m_Mode: 1
@@ -11292,7 +11292,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2066193695}
         m_TargetAssemblyTypeName: Startgame, Assembly-CSharp
         m_MethodName: Lvlslct
         m_Mode: 5
@@ -11301,7 +11301,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level01
+          m_StringArgument: Level02
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1974097020
