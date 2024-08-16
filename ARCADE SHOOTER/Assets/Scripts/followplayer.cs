@@ -11,9 +11,9 @@ public class followplayer : MonoBehaviour
     public Transform player1;
     void Start()
     {
-        crtn.y=player1.position.y+4;
-        crtn.z=-10+offset.z;
-        transform.position=crtn;
+        crtn.y = player1.position.y + 4;
+        crtn.z = -10 + offset.z;
+        transform.position = crtn;
         //player=player1;
         // if(k==0)
         // {
@@ -24,22 +24,22 @@ public class followplayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player==null)
+        if (player == null)
         {
             Debug.Log("NULL");
-            player=player1;
+            player = player1;
         }
-        crtn.x=0;
-            crtn.y=player.position.y+4+offset.y;
-            transform.position=crtn;
-        
+        crtn.x = 0;
+        crtn.y = player.position.y + 4 + offset.y;
+        transform.position = crtn;
+
         /*
         Healthbar.position=player.position + Hoffset;
         Blackbar.position=player.position + Boffset+lshift;*/
     }
     void OnTriggerEnter2D(Collider2D collisioninfo)
     {
-        if(collisioninfo.tag=="PlyBullet" || collisioninfo.tag=="Bullet")
+        if (collisioninfo.tag == "PlyBullet" || collisioninfo.tag == "Bullet")
         {
             Destroy(collisioninfo.gameObject);
         }

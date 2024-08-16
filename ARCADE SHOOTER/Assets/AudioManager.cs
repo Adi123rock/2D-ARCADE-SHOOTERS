@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
     public Sound[] sounds; 
-    public AudioSource musicsource,sfxsource;
+    public AudioSource musicsource,sfxsource,plysource;
     // Start is called before the first frame update
     void Awake()
     {
@@ -47,6 +47,22 @@ public class AudioManager : MonoBehaviour
             }
         } 
     }
+    public void plyplay(string name)
+    {
+        //Sound s;
+        // Sound s=Array.Find(sounds, sound=> sound.name==name);
+        foreach (Sound s in sounds)
+        {
+            if(s.name==name)
+            {
+                Debug.Log("FOUND"+s.name);
+                plysource.clip=s.clip;
+                // sfxsource.volume=s.volume;
+                plysource.Play();
+                break;
+            }
+        } 
+    }
     public void MusicPlay(string name)
     {
         //Sound s;
@@ -72,5 +88,6 @@ public class AudioManager : MonoBehaviour
     public void SfxChange(float volume)
     {
         sfxsource.volume=volume;
+        plysource.volume=volume;
     }
 }

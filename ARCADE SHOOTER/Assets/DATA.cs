@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DATA
+public class Data
 {
     public int level;
     public int health;
     public float[] position;
-    public DATA(Spship_details details)
+    public Data (SAVETRY data)
     {
-        //level=details.;
+        level=data.P1.level;
+        // level=spship_Details.LvlCompno;
     }
 }

@@ -7,11 +7,11 @@ public class forceapply : MonoBehaviour
 {
     //bool Fwd=true;
     //public Vector3 explosionPosition;
-    public float ply_vel=6f;
+    // public float ply_vel=6f;
     public float fwdForce=20f;
     public float sideForce=100f;
     public Rigidbody2D rb;
-    bool up_down;
+    // bool up_down;
     // Start is called before the first frame update
     void Start()
     {

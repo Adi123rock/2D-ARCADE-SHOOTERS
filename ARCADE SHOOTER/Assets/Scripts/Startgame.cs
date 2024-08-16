@@ -65,6 +65,72 @@ public class Startgame : MonoBehaviour
                 //Compare score and highscorewww
             }
         }
+        else if(SceneManager.GetActiveScene().buildIndex==3)
+        {
+            if(Spship_details.L3_HighScore==0)
+            {
+                highscoretext.text="HighScore:"+score.ToString("0");
+                Spship_details.L3_HighScore=score;
+                
+            }
+            else
+            {
+                if(Spship_details.L3_HighScore < score)
+                {
+                    highscoretext.text="HighScore:"+score.ToString("0");
+                    Spship_details.L3_HighScore = score;
+                }
+                else
+                {
+                    highscoretext.text="HighScore:"+Spship_details.L3_HighScore.ToString();
+                }
+                //Compare score and highscorewww
+            }
+        }
+        else if(SceneManager.GetActiveScene().buildIndex==4)
+        {
+            if(Spship_details.L4_HighScore==0)
+            {
+                highscoretext.text="HighScore:"+score.ToString("0");
+                Spship_details.L4_HighScore=score;
+                
+            }
+            else
+            {
+                if(Spship_details.L4_HighScore < score)
+                {
+                    highscoretext.text="HighScore:"+score.ToString("0");
+                    Spship_details.L4_HighScore = score;
+                }
+                else
+                {
+                    highscoretext.text="HighScore:"+Spship_details.L4_HighScore.ToString();
+                }
+                //Compare score and highscorewww
+            }
+        }
+        else if(SceneManager.GetActiveScene().buildIndex==5)
+        {
+            if(Spship_details.L5_HighScore==0)
+            {
+                highscoretext.text="HighScore:"+score.ToString("0");
+                Spship_details.L5_HighScore=score;
+                
+            }
+            else
+            {
+                if(Spship_details.L5_HighScore < score)
+                {
+                    highscoretext.text="HighScore:"+score.ToString("0");
+                    Spship_details.L5_HighScore = score;
+                }
+                else
+                {
+                    highscoretext.text="HighScore:"+Spship_details.L5_HighScore.ToString();
+                }
+                //Compare score and highscorewww
+            }
+        }
     }
     public void Lvlslct(string name)
     {

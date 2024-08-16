@@ -30,11 +30,11 @@ public class PlayerCollisiion : MonoBehaviour
     {
         health=HealthBar.health;
     }
-    void OnTriggerEnter2D (Collider2D Collisioninfo)
+    void OnCollisionEnter2D (Collision2D Collisioninfo)
     {
         Debug.Log("ontrigger");
         Debug.Log(Collisioninfo);
-        if((Collisioninfo.tag=="Bullet" || Collisioninfo.tag=="Obstacle") && shield)
+        if((Collisioninfo.gameObject.tag=="Obstacle") && shield)
         {
             if(health>0){
                 health-=50f;
@@ -55,13 +55,40 @@ public class PlayerCollisiion : MonoBehaviour
                 Invoke("GameOver",delay*1f);  
             }
         }
-        else if(Collisioninfo.tag=="EnemyBullet")
+        
+    }
+    void OnTriggerEnter2D (Collider2D Collisioninfo)
+    {
+        Debug.Log("ontrigger");
+        Debug.Log(Collisioninfo);
+        if((Collisioninfo.tag=="Bullet") && shield)
         {
-            FindObjectOfType<AudioManager>().SfxPlay("ShieldCollision");
+            if(health>0){
+                health-=50f;
+            }
+            healthtext.text="HP:"+health.ToString();
+            Leshift();
+            if(health==0f && once)
+            {
+                Deathtime=FindObjectOfType<Lvlcmp>().Telltime();
+                FindObjectOfType<GameMAnager>().DefeatScore((int)Deathtime);
+                once=false;
+                movement.enabled=false;
+                expeffect.position=transform.position;
+                explosionEffect.SetActive(true);
+                FindObjectOfType<AudioManager>().SfxPlay("PlayerDeath");
+                // Instantiate(explosionEffect,transform.position,transform.rotation);
+                Invoke("Gamedone",1f);
+                Invoke("GameOver",delay*1f);  
+            }
+        }
+        else if(Collisioninfo.tag=="Bullet")
+        {
+            FindObjectOfType<AudioManager>().plyplay("ShieldCollision");
         }
         if(Collisioninfo.tag=="Shield")
         {
-            FindObjectOfType<AudioManager>().SfxPlay("ShieldEquip");
+            FindObjectOfType<AudioManager>().plyplay("ShieldEquip");
             Destroy(ShieldPowerup);
             // FindObjectOfType<PlayerCollisiion>().enabled=false;
             shield=false;

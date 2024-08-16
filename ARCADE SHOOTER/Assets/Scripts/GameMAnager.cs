@@ -64,6 +64,7 @@ public class GameMAnager : MonoBehaviour
     public void Wave_lvls()
     {
         FindObjectOfType<AudioManager>().SfxPlay("Click");
+        bulletcollision.EnemyKilled=0;
         SceneManager.LoadScene("Main Level");//For enetring waves
     }
     public void DefeatScore(int Deathtime)
@@ -117,7 +118,7 @@ public class GameMAnager : MonoBehaviour
     public void Continue()
     {
         timerbool=false;
-        FindObjectOfType<AudioManager>().SfxPlay("Click");
+        FindObjectOfType<AudioManager>().SfxPlay("Coin_Sound");
         if(UIvarables.coins>=3000)
         {
             Debug.Log("ENTERED continue");
@@ -179,7 +180,7 @@ public class GameMAnager : MonoBehaviour
     {
         waveno++;
         Debug.Log(waveno);
-        Waveheading.text = "-- FINAL WAVE --" ;
+        Waveheading.text = "-- WAVE 15 --" ;
         headinganimator.SetBool("Heading", true);
         Invoke("HeadingGo", 2f);
     }

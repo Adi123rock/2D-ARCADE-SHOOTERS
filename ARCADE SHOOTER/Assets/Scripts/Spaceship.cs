@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Spaceship : MonoBehaviour
 {
+    SAVETRY save;
     public TextMeshProUGUI Buycost,Upgcost;
     public TextMeshProUGUI Lvl_Spship, Hp_Spship, Dmg_Spship;
     public GameObject buy_button, upgrade_button;
@@ -14,6 +15,7 @@ public class Spaceship : MonoBehaviour
     int i = 0;
     void Start()
     {
+        // save.P1.level=2;
         nextspaceship();
     }
     public void BuySpacship()
@@ -24,6 +26,8 @@ public class Spaceship : MonoBehaviour
             {
                 UIvarables.coins-=Spship_details.Buycost_S2;
                 Spship_details.S2=true;
+                // FindObjectOfType<SAVETRY>().
+                
                 FindObjectOfType<AudioManager>().SfxPlay("Coin_Sound");
             }
             else 
@@ -365,6 +369,7 @@ public class Spaceship : MonoBehaviour
             Dmg_Spship.text = "Damage:" + Spship_details.dmg_S1.ToString();
             Hp_Spship.text = "Hp:" + Spship_details.Hp_S1.ToString();
             prev_button.SetActive(false);
+            next_button.SetActive(true);
             S_1.SetActive(true);
             S_2.SetActive(false);
             S_3.SetActive(false);
@@ -390,6 +395,7 @@ public class Spaceship : MonoBehaviour
             Dmg_Spship.text = "Damage:" + Spship_details.dmg_S2.ToString();
             Hp_Spship.text = "Hp:" + Spship_details.Hp_S2.ToString();
             prev_button.SetActive(true);
+            next_button.SetActive(true);
             S_1.SetActive(false);
             S_2.SetActive(true);
             S_3.SetActive(false);
@@ -414,6 +420,8 @@ public class Spaceship : MonoBehaviour
             Lvl_Spship.text = "Level:" + Spship_details.Lvl_S3.ToString();
             Dmg_Spship.text = "Damage:" + Spship_details.dmg_S3.ToString();
             Hp_Spship.text = "Hp:" + Spship_details.Hp_S3.ToString();
+            prev_button.SetActive(true);
+            next_button.SetActive(true);
             S_1.SetActive(false);
             S_2.SetActive(false);
             S_3.SetActive(true);
@@ -438,6 +446,8 @@ public class Spaceship : MonoBehaviour
             Lvl_Spship.text = "Level:" + Spship_details.Lvl_S4.ToString();
             Dmg_Spship.text = "Damage:" + Spship_details.dmg_S4.ToString();
             Hp_Spship.text = "Hp:" + Spship_details.Hp_S4.ToString();
+            prev_button.SetActive(true);
+            next_button.SetActive(true);
             S_1.SetActive(false);
             S_2.SetActive(false);
             S_3.SetActive(false);
@@ -462,6 +472,7 @@ public class Spaceship : MonoBehaviour
             Lvl_Spship.text = "Level:" + Spship_details.Lvl_S5.ToString();
             Dmg_Spship.text = "Damage:" + Spship_details.dmg_S5.ToString();
             Hp_Spship.text = "Hp:" + Spship_details.Hp_S5.ToString();
+            prev_button.SetActive(true);
             next_button.SetActive(true);
             S_1.SetActive(false);
             S_2.SetActive(false);
@@ -487,6 +498,7 @@ public class Spaceship : MonoBehaviour
             Lvl_Spship.text = "Level:" + Spship_details.Lvl_S6.ToString();
             Dmg_Spship.text = "Damage:" + Spship_details.dmg_S6.ToString();
             Hp_Spship.text = "Hp:" + Spship_details.Hp_S6.ToString();
+            prev_button.SetActive(true);
             next_button.SetActive(false);
             S_1.SetActive(false);
             S_2.SetActive(false);

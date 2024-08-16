@@ -20,7 +20,7 @@ public class firebullet : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            //FindObjectOfType<AudioManager>().SfxPlay("Firing");
+            FindObjectOfType<AudioManager>().plyplay("Firing");
             Debug.Log("FIRE");
             firedblt = Instantiate(bullet, player.position + offset, player.rotation);
             blt = firedblt.GetComponent<Rigidbody2D>();
