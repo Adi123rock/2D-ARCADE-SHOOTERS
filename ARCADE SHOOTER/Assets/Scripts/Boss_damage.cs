@@ -11,4 +11,8 @@ public class Boss_damage : MonoBehaviour
             FindObjectOfType<Boss>().dec_hbar();
         }
     }
+    void OnCollisionEnter2D (Collision2D collisioninfo)
+    {
+        Debug.Log(collisioninfo.collider.name);
+    }
 }

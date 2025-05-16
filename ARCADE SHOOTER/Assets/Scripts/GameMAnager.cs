@@ -9,39 +9,89 @@ public class GameMAnager : MonoBehaviour
 {
     public TextMeshProUGUI YourScoretext;
     public GameObject winpanel;
-    public TextMeshProUGUI DeathScore,DefeatCoinText;
-    float timer=10f;
-    bool timerbool=false;
+    public TextMeshProUGUI DeathScore, DefeatCoinText;
+    float timer = 10f;
+    bool timerbool = false;
     public TextMeshProUGUI timertext;
     public GameObject Settings;
-    public Transform U_border,B_border;//for boss
+    public Transform U_border, B_border;//for boss
     Vector3 borderoffset;
     public Animator headinganimator;
     public TextMeshProUGUI Waveheading;
-    bool cont=false;
-    int score=0,waveno=0;
+    bool cont = false;
+    int score = 0, waveno = 0;
     public Text scoretext;
-    public GameObject After_lose1,After_lose2;
+    public GameObject After_lose1, After_lose2;
+    static bool loaddata=true;
     // public void OpenL02()
     // {
     //     levels_lock.L02_lock.SetActive(false);
     // }
+    SAVETRY data1;
+    public void DeletePlayer()
+    {
+        // data1.
+        SaveSystem.DeletePlayer(data1);
+    }
+    public void LoadPlayer()
+    {
+        Data data = SaveSystem.LoadPlayer();
+        if (data == null)
+        {
+            Debug.Log("Createing new player");
+            NewPlayer();
+        }
+        else
+        {
+            SAVETRY.P1 = data.P1;
+            SAVETRY.P2 = data.P2;
+            SAVETRY.P3 = data.P3;
+            SAVETRY.P4 = data.P4;
+            SAVETRY.P5 = data.P5;
+            SAVETRY.P6 = data.P6;
+            UIvarables.namespaceship = data.namespaceship;
+            UIvarables.coins = data.coins;
+            UIvarables.diamonds = data.diamonds;
+            UIvarables.CompLvlno = data.CompLvlno;
+            SceneManager.LoadScene("UI");
+        }
+    }
+    public void SavePlayer()
+    {
+        data1 = new SAVETRY(data1);
+        
+        SaveSystem.SavePlayer(data1);
+    }
+    public void NewPlayer()
+    {
+        data1 = new SAVETRY(data1);
+        SaveSystem.NewPlayer(data1);
+    }
     void Update()
     {
-
-        if(timerbool)
+        if (timerbool)
         {
-            timertext.text=timer.ToString("0");
-            timer-=1*Time.deltaTime;
+            timertext.text = timer.ToString("0");
+            timer -= 1 * Time.deltaTime;
         }
     }
     void Start()
     {
-        if(headinganimator!=null)
+        if(loaddata)
+        {
+            //LoadPlayer();
+            loaddata=false;
+        }
+        string a = SceneManager.GetActiveScene().ToString();
+        if (a == "Levels")
+        {
+            FindObjectOfType<LevelLock>().LvlLock();
+        }
+        if (headinganimator != null)
         {
             WaveH_Change();
         }
-        
+
     }
     public void SttingsOpen()
     {
@@ -55,76 +105,76 @@ public class GameMAnager : MonoBehaviour
     }
     public void BorderChange()
     {
-        borderoffset=transform.position;
-        borderoffset.y-=13;
-        B_border.position=borderoffset;
-        borderoffset.y+=21;
-        U_border.position=borderoffset;
+        borderoffset = transform.position;
+        borderoffset.y -= 13;
+        B_border.position = borderoffset;
+        borderoffset.y += 21;
+        U_border.position = borderoffset;
     }
     public void Wave_lvls()
     {
         FindObjectOfType<AudioManager>().SfxPlay("Click");
-        bulletcollision.EnemyKilled=0;
+        bulletcollision.EnemyKilled = 0;
         SceneManager.LoadScene("Main Level");//For enetring waves
     }
     public void DefeatScore(int Deathtime)
     {
-        int EnemeiesKilled=Startgame.EnemiesKilled;
-        DeathScore.text="Score:"+(EnemeiesKilled*600/Deathtime).ToString();
-        if(DefeatCoinText!=null)
+        int EnemeiesKilled = Startgame.EnemiesKilled;
+        DeathScore.text = "Score:" + (EnemeiesKilled * 600 / Deathtime).ToString();
+        if (DefeatCoinText != null)
         {
-            
-            if(Startgame.EnemiesKilled>=46)
+
+            if (Startgame.EnemiesKilled >= 46)
             {
-                DefeatCoinText.text="6000";
-                UIvarables.coins+=6000;
+                DefeatCoinText.text = "6000";
+                UIvarables.coins += 6000;
             }
-            else if(Startgame.EnemiesKilled>=15)
+            else if (Startgame.EnemiesKilled >= 15)
             {
-                DefeatCoinText.text="3000";
-                UIvarables.coins+=3000;
+                DefeatCoinText.text = "3000";
+                UIvarables.coins += 3000;
             }
             else
             {
-                DefeatCoinText.text="0";
-                UIvarables.coins+=0;
+                DefeatCoinText.text = "0";
+                UIvarables.coins += 0;
             }
         }
     }
     public void Lost1()
     {
-        timer=10f;
-        Time.timeScale=1f;
+        timer = 10f;
+        Time.timeScale = 1f;
         After_lose1.SetActive(true);
-        Invoke("Lost2",10f);
-        timerbool=true;
+        Invoke("Lost2", 10f);
+        timerbool = true;
     }
     public void Lost2()
     {
-        if(timer>0f)
+        if (timer > 0f)
         {
             FindObjectOfType<AudioManager>().SfxPlay("Click");
         }
         Debug.Log(!cont);
-        if(!cont)
+        if (!cont)
         {
-            Time.timeScale=1f;
+            Time.timeScale = 1f;
             After_lose1.SetActive(false);
             After_lose2.SetActive(true);
-            Startgame.EnemiesKilled=0;
+            Startgame.EnemiesKilled = 0;
         }
-        cont=false;   
+        cont = false;
     }
     public void Continue()
     {
-        timerbool=false;
+        timerbool = false;
         FindObjectOfType<AudioManager>().SfxPlay("Coin_Sound");
-        if(UIvarables.coins>=3000)
+        if (UIvarables.coins >= 3000)
         {
             Debug.Log("ENTERED continue");
-            UIvarables.coins-=3000;
+            UIvarables.coins -= 3000;
             After_lose1.SetActive(false);
-            cont=true;
+            cont = true;
             FindObjectOfType<PlayerCollisiion>().Continuegame();
         }
     }
@@ -132,7 +182,7 @@ public class GameMAnager : MonoBehaviour
     // {
     //     Debug.Log(shipname);
     //     SceneManager.LoadScene("UI");
-        
+
     // }
     public void Spaceships()
     {
@@ -146,8 +196,8 @@ public class GameMAnager : MonoBehaviour
     }
     public void scoreinc()
     {
-        score+=10;
-        scoretext.text="Score:"+score.ToString();
+        score += 10;
+        scoretext.text = "Score:" + score.ToString();
     }
     public void Lvlselction(string level)
     {
@@ -180,7 +230,7 @@ public class GameMAnager : MonoBehaviour
     {
         waveno++;
         Debug.Log(waveno);
-        Waveheading.text = "-- WAVE 15 --" ;
+        Waveheading.text = "-- WAVE 15 --";
         headinganimator.SetBool("Heading", true);
         Invoke("HeadingGo", 2f);
     }
@@ -188,20 +238,20 @@ public class GameMAnager : MonoBehaviour
     {
         waveno++;
         Debug.Log(waveno);
-        Waveheading.text = "-- WAVES COMPLETED --" ;
+        Waveheading.text = "-- WAVES COMPLETED --";
         headinganimator.SetBool("Heading", true);
         Invoke("HeadingGo", 2f);
         Invoke("getout", 2f);
-        
+
     }
     void HeadingGo()
     {
-        headinganimator.SetBool("Heading",false);
+        headinganimator.SetBool("Heading", false);
     }
     void getout()
     {
-        float time=FindObjectOfType<Lvlcmp>().Telltime();
-        YourScoretext.text="Score:"+(82*600/(int)time).ToString();
+        float time = FindObjectOfType<Lvlcmp>().Telltime();
+        YourScoretext.text = "Score:" + (82 * 600 / (int)time).ToString();
         winpanel.SetActive(true);
     }
 }

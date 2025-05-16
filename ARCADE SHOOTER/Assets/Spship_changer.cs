@@ -27,8 +27,8 @@ public class Spship_changer : MonoBehaviour
             S_5.SetActive(false);
             S_6.SetActive(false);
             followplayer.player=S_1.transform;
-            bulletcollision.damage=Spship_details.dmg_S1;
-            HealthBar.health=Spship_details.Hp_S1;
+            bulletcollision.damage=SAVETRY.P1.dmg;
+            HealthBar.health=SAVETRY.P1.hp;
         }
         else if(namespaceship=="S_2")
         {
@@ -39,8 +39,8 @@ public class Spship_changer : MonoBehaviour
             S_5.SetActive(false);
             S_6.SetActive(false);
             followplayer.player=S_2.transform;
-            bulletcollision.damage=Spship_details.dmg_S2;
-            HealthBar.health=Spship_details.Hp_S2;
+            bulletcollision.damage=SAVETRY.P2.dmg;
+            HealthBar.health=SAVETRY.P2.hp;
         }
         else if(namespaceship=="S_3")
         {
@@ -51,8 +51,8 @@ public class Spship_changer : MonoBehaviour
             S_5.SetActive(false);
             S_6.SetActive(false);
             followplayer.player=S_3.transform;
-            bulletcollision.damage=Spship_details.dmg_S3;
-            HealthBar.health=Spship_details.Hp_S3;
+            bulletcollision.damage=SAVETRY.P3.dmg;
+            HealthBar.health=SAVETRY.P3.hp;
         }
         else if(namespaceship=="S_4")
         {
@@ -63,8 +63,8 @@ public class Spship_changer : MonoBehaviour
             S_5.SetActive(false);
             S_6.SetActive(false);
             followplayer.player=S_4.transform;
-            bulletcollision.damage=Spship_details.dmg_S4;
-            HealthBar.health=Spship_details.Hp_S4;
+            bulletcollision.damage=SAVETRY.P4.dmg;
+            HealthBar.health=SAVETRY.P4.hp;
         }
         else if(namespaceship=="S_5")
         {
@@ -75,8 +75,8 @@ public class Spship_changer : MonoBehaviour
             S_5.SetActive(true);
             S_6.SetActive(false);
             followplayer.player=S_5.transform;
-            bulletcollision.damage=Spship_details.dmg_S5;
-            HealthBar.health=Spship_details.Hp_S5;
+            bulletcollision.damage=SAVETRY.P5.dmg;
+            HealthBar.health=SAVETRY.P5.hp;
         }
         else if(namespaceship=="S_6")
         {
@@ -87,8 +87,8 @@ public class Spship_changer : MonoBehaviour
             S_5.SetActive(false);
             S_6.SetActive(true);
             followplayer.player=S_6.transform;
-            bulletcollision.damage=Spship_details.dmg_S6;
-            HealthBar.health=Spship_details.Hp_S6;
+            bulletcollision.damage=SAVETRY.P6.dmg;
+            HealthBar.health=SAVETRY.P6.hp;
         }
     }
     

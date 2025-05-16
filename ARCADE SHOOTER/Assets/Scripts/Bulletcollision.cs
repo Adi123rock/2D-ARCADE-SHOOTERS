@@ -12,31 +12,6 @@ public class bulletcollision : MonoBehaviour
     //public Transform  obst;
     public GameObject explosionEffect, obstacle;
 
-    void OnCollisionEnter2D(Collision2D collisionInfo)
-    {
-        //string b=collisionInfo.collider.name;
-        if (collisionInfo.gameObject.tag == "Player")
-        {
-            Debug.Log("obstacleCollision");
-            health -= damage;
-            if (health <= 0 && dead)
-            {
-                dead = false;
-                Startgame.EnemiesKilled++;
-                FindObjectOfType<GameMAnager>().scoreinc();
-                explosionEffect.SetActive(true);
-                FindObjectOfType<AudioManager>().SfxPlay("ObstacleDestroy");
-                //Instantiate(explosionEffect,transform.position,transform.rotation);
-                Debug.Log("INSTANTIATE");
-                Invoke("Explode", 0.5f);
-                Debug.Log("INVOKE");
-                //Explode();
-                //Invoke("Destroyexpl",20f);
-            }
-        }
-
-    }
-
     void OnTriggerEnter2D(Collider2D collisionInfo)
     {
         //string b=collisionInfo.collider.name;

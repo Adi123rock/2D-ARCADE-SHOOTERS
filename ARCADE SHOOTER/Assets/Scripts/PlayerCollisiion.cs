@@ -30,38 +30,11 @@ public class PlayerCollisiion : MonoBehaviour
     {
         health=HealthBar.health;
     }
-    void OnCollisionEnter2D (Collision2D Collisioninfo)
-    {
-        Debug.Log("ontrigger");
-        Debug.Log(Collisioninfo);
-        if((Collisioninfo.gameObject.tag=="Obstacle") && shield)
-        {
-            if(health>0){
-                health-=50f;
-            }
-            healthtext.text="HP:"+health.ToString();
-            Leshift();
-            if(health==0f && once)
-            {
-                Deathtime=FindObjectOfType<Lvlcmp>().Telltime();
-                FindObjectOfType<GameMAnager>().DefeatScore((int)Deathtime);
-                once=false;
-                movement.enabled=false;
-                expeffect.position=transform.position;
-                explosionEffect.SetActive(true);
-                FindObjectOfType<AudioManager>().SfxPlay("PlayerDeath");
-                // Instantiate(explosionEffect,transform.position,transform.rotation);
-                Invoke("Gamedone",1f);
-                Invoke("GameOver",delay*1f);  
-            }
-        }
-        
-    }
     void OnTriggerEnter2D (Collider2D Collisioninfo)
     {
         Debug.Log("ontrigger");
         Debug.Log(Collisioninfo);
-        if((Collisioninfo.tag=="Bullet") && shield)
+        if((Collisioninfo.tag=="Bullet" || Collisioninfo.tag=="Obstacle") && shield)
         {
             if(health>0){
                 health-=50f;

@@ -27,7 +27,7 @@ public class Lvlcmp : MonoBehaviour
         {
             Startgame.total_time=(int)current_time;
             UIvarables.coins+=coins;
-            if (i == 0) 
+            if (i == 0 && UIvarables.CompLvlno==0) 
             {
                 UIvarables.CompLvlno = 1; 
                 i++;
@@ -42,6 +42,7 @@ public class Lvlcmp : MonoBehaviour
                     Debug.Log("CompLvlno"+UIvarables.CompLvlno);
                 }
             }
+            FindObjectOfType<GameMAnager>().SavePlayer();
             //FindObjectOfType<GameMAnager>().OpenL02();
             Lvlcomp.SetActive(true);
             Invoke("Lvlcompl", 1f);

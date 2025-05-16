@@ -13,6 +13,7 @@ public class UIvarables : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
+        FindObjectOfType<GameMAnager>().NewPlayer();
         nocoins.text=coins.ToString();
         nodiamonds.text=diamonds.ToString();
     }
