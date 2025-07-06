@@ -18,7 +18,7 @@ Attributes
  Installation
 Download the Game: Download the zipped file from the link 
  Extract the Files: Extract the ZIP file to your desired location.
- Run the Game: Open the extracted folder , Double-click SpaceShooter.exe (for Windows) or SpaceShooter.app (for macOS) to start the game.
+ Run the Game: Open the extracted folder and go to the GAME folder, Double-click SpaceShooter.exe (for Windows) or SpaceShooter.app (for macOS) to start the game.
 
 Gameplay
 Objective:  Destroy all incoming aliens and avoid their attacks.
